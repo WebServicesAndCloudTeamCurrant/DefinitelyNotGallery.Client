@@ -1,7 +1,7 @@
 ﻿/// <reference path="http-requester.js" />
 /// <reference path="class.js" />
 /// <reference path="libs/sha1.js" />
-define(['jquery', 'request', 'mustache', 'sha1'], function ($, httpRequester, mustache) {
+define(['jquery', 'request', 'mustache'], function ($, httpRequester, mustache) {
 
     var persisters = (function () {
         //TO DO Extract this into module!
@@ -39,7 +39,6 @@ define(['jquery', 'request', 'mustache', 'sha1'], function ($, httpRequester, mu
         }
 
         function loginUser(username, password) {
-            //authCode = CryptoJS.SHA1(username + password).toString();
             httpRequester.post(
                 serverUrl + 'Token',
                 'grant_type=password&username=' + username + '&password=' + password,

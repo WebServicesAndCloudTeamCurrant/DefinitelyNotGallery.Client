@@ -29,7 +29,7 @@ define(['jquery', 'request', 'mustache'], function ($, httpRequester, mustache) 
                     "ConfirmPassword": confirmedPassword
                 },
                 function () {
-                    window.location = '#/app/';
+                    window.location = '#/login/';
                 },
                 function (err) {
                     //alert(err.responseJSON.message);

@@ -10,7 +10,7 @@ define(['jquery', 'persister'], function ($, persisters) {
                         window.location = '#/app/';
                     }
                     else {
-                        $('#content').html(homeHTML);
+                        $('#content-user-info').html(homeHTML);
                     }
                 },
                 error: function () {

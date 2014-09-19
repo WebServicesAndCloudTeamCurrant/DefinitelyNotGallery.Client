@@ -74,15 +74,9 @@ define(['jquery', 'persister'], function ($, persisters) {
                     $button.on('click', function () {
                             persisters.logout();
                         });
-                    $container.find('#btn-get-posts')
+                    $container.find('#btn-get-images')
                         .on('click', function () {
                             persisters.allPosts();
-                        });
-                    $container.find('#btn-post')
-                        .on('click', function () {
-                            var title = $container.find('#post-title').val();
-                            var body = $container.find('#post-body').val();
-                            persisters.sendPost(title, body);
                         });
                 },
                 error: function () {

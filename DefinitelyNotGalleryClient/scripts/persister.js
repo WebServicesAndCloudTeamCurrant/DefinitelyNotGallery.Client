@@ -91,7 +91,7 @@ define(['jquery', 'request', 'mustache'], function ($, httpRequester, mustache) 
                                     .html(templatedMessage);
                         messagesDiv.append(messageItem);
                     }
-                    $('#posts-container').html(messagesDiv);
+                    $('#images-container').html(messagesDiv);
                 },
                 function (err) {
                     alert('Cannot load pictures');

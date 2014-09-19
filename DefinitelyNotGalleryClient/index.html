@@ -3,28 +3,22 @@
 <head>
     <title>Definitely Not Gallery</title>
     <link href="styles.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
     <div id="wrapper">
         <header>
-            <h1>Definitely Not Gallery</h1>
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container-fluid">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#/login/">Login</a></li>
+                        <li><a href="#/register/">Register</a></li>
+                    </ul> 
+                </div>  
+            </nav>
         </header>
         <div id="content">
         </div>
-    </div>
-
-    <script id="pictures-template" type='text/x-mustache-template'>
-        {{#.}}
-            <div class="picture-frame">
-                <img src="{{{Url}}}" width="200" height="200" alt="{{Name}}" />
-                <div>
-                    <span class="picture-name">
-                        {{Name}}
-                    </span>
-                </div>
-            </div>
-        {{/.}}
-    </script>
     <script src="scripts/libs/require.js" data-main="scripts/app"></script>
 </body>
 </html>

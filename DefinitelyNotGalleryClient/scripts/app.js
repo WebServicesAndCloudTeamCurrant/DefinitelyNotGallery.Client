@@ -14,7 +14,7 @@
     require(['sammy', 'page'], function (sammy, page) {
         var app = sammy('#content', function () {
             this.get('#/home', function () {
-                page.showHome();
+                //page.showHome();
             });
 
             this.get('#/register/', function () {

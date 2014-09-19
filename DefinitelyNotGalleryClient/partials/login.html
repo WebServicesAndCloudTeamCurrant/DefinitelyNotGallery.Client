@@ -1,5 +1,25 @@
-﻿<label for="tb-login-username">Username: </label>
-<input type="text" id="tb-login-username"><br />
-<label for="tb-login-password">Password: </label>
-<input type="text" id="tb-login-password"><br />
-<button id="btn-login" class="button">Login</button>
+﻿<div class="col-md-4">
+    <div class="login-panel panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Sign In</h3>
+        </div>
+        <div class="panel-body">
+            <form role="form">
+                <fieldset>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="E-mail" name="email" type="email" autofocus="">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                    </div>
+                    <div class="checkbox">
+                        <label>
+                            <input name="remember" type="checkbox" value="Remember Me">Remember Me
+                        </label>
+                    </div>
+                    <button id="btn-login" class="btn btn-sm btn-success">Login</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

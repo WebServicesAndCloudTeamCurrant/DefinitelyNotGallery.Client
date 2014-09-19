@@ -75,26 +75,23 @@ define(['jquery', 'request', 'mustache'], function ($, httpRequester, mustache) 
 
         function allPosts() {
             httpRequester.getJSON(
-                serverUrl + 'api/Images/All',
+                serverUrl + '/post',
                 function (data) {
-                    //console.log(data);
-                    var messagesDiv = $("<div />");
-                    var templateString = $("#pictures-template").html();
-                    console.log(templateString);
+                    console.log(data);
+                    var messagesList = $("<ul />");
+                    var templateString = $("#posts-template").html();
                     var template = mustache.compile(templateString);
-                    for (var i = 0; i < data.length; i += 1) {
+                    for (var i = data.length; i >= 0; i -= 1) {
                         var message = data[i];
-                        var templatedMessage = mustache.to_html(templateString, message);
-                        console.log(message);
-                        console.log(templatedMessage);
-                        var messageItem = $("<span />").addClass("post-picture")
+                        var templatedMessage = template(message);
+                        var messageItem = $("<li />").addClass("post-item")
                                     .html(templatedMessage);
-                        messagesDiv.append(messageItem);
+                        messagesList.append(messageItem);
                     }
-                    $('#posts-container').html(messagesDiv);
+                    $('#posts-container').html(messagesList);
                 },
                 function (err) {
-                    alert('Cannot load pictures');
+
                 });
         }
 

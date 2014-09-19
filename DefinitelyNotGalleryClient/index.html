@@ -13,12 +13,25 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="#/login/">Login</a></li>
                         <li><a href="#/register/">Register</a></li>
-                    </ul> 
-                </div>  
+                    </ul>
+                </div>
             </nav>
         </header>
         <div id="content">
         </div>
-    <script src="scripts/libs/require.js" data-main="scripts/app"></script>
+
+        <script id="pictures-template" type='text/x-mustache-template'>
+            {{#.}}
+            <div class="picture-frame">
+                <img src="{{{Url}}}" width="200" height="200" alt="{{Name}}" />
+                <div>
+                    <span class="picture-name">
+                        {{Name}}
+                    </span>
+                </div>
+            </div>
+            {{/.}}
+        </script>
+        <script src="scripts/libs/require.js" data-main="scripts/app"></script>
 </body>
 </html>

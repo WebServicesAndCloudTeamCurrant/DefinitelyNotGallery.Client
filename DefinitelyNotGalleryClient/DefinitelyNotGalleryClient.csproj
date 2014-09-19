@@ -67,6 +67,7 @@
     <Content Include="partials\home.html" />
     <Content Include="partials\login.html" />
     <Content Include="partials\register.html" />
+    <Content Include="partials\userInfo.html" />
     <Content Include="scripts\app.js" />
     <Content Include="scripts\libs\bootstrap.js" />
     <Content Include="scripts\libs\bootstrap.min.js" />
@@ -86,7 +87,6 @@
     <Content Include="scripts\libs\sammy.js" />
     <Content Include="scripts\user-interface.js" />
     <Content Include="scripts\persister.js" />
-    <Content Include="styles.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

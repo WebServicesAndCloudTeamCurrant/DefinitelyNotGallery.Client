@@ -10,7 +10,7 @@ define(['jquery', 'persister'], function ($, persisters) {
                         window.location = '#/app/';
                     }
                     else {
-                        $('#content-user-info').html(homeHTML);
+                        $('#container-user-info').html(homeHTML);
                     }
                 },
                 error: function () {
@@ -70,8 +70,8 @@ define(['jquery', 'persister'], function ($, persisters) {
                 url: 'partials/app.html',
                 success: function (appHTML) {
                     var $container = $('#content').html(appHTML);
-                    $container.find('#btn-logout')
-                        .on('click', function () {
+                    var $button = $('#container-user-info').find('#btn-logout');
+                    $button.on('click', function () {
                             persisters.logout();
                         });
                     $container.find('#btn-get-posts')
@@ -91,11 +91,32 @@ define(['jquery', 'persister'], function ($, persisters) {
             });
         }
 
+        function showUserInfo() {
+            $.ajax({
+                url: 'partials/userInfo.html',
+                success: function (userInfoHtml) {
+                    $('#container-user-info').html(userInfoHtml);
+                    var user = localStorage.getItem('user');
+
+                    $('#user').html(user);
+                },
+                error: function () {
+                    alert('Cannot load user-info!');
+                }
+            });
+        }
+
+        function clearContent() {
+            $('#content').empty();
+        }
+
         return {
             showHome: showHome,
             showLogin: showLogin,
             showRegister: showRegister,
-            showApp: showApp
+            showApp: showApp,
+            showUserInfo: showUserInfo,
+            clearContent: clearContent
         };
     }());
 

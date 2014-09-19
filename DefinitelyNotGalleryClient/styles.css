@@ -1,4 +1,8 @@
-﻿#wrapper {
+﻿.picture-frame{
+    display: inline-block;
+}
+
+#wrapper {
     width: 70%;
     margin: 0 auto;
     text-align: center;
